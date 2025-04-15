@@ -44,7 +44,9 @@ student-registration-portal/
 ├── script.js               # JS logic (Add/Edit/Delete/Validation)
 └── README.md               # Project overview
 ```
+###  Live Demo
 
+ https://varsha-boddapati-24.github.io/student-registration-portal/
 ---
 
 ##  What You’ll Learn
