@@ -1,0 +1,269 @@
+/* Define color palette using CSS Variables */
+:root {
+  --primary-colour: rgba(53, 47, 114, 0.75);
+  --secondary-color:  rgba(255, 255, 255, 0.2); 
+  --accent-color:rgba(255, 255, 255, 0.1);  
+  --error-color:#b20000;
+  --success-color: #218838;   
+  --button-color:#00bcd4;
+  --button-hover-color:#007c8a; 
+  --text-color: white;
+  --border-color: #ddd; 
+  --button-hover-scale: 1.1; 
+  --transition-duration: 0.3s; 
+  
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.5s;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Body Styling - Set background, text color, and font family */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('./assets/background.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+/* Fixed Overlay - Add background overlay for the body */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: var(--primary-colour);
+  z-index: 0;
+}
+
+/* Header Styling - Center-align header content and add border */
+header {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* Navigation Bar - Align navigation items to the right */
+.nav-bar {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Navigation Links - Style links with padding, bold font, and shadow */
+.nav-bar a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 8px 2px rgba(242, 229, 229, 0.916);
+}
+
+/* Navigation Links Hover - Change color and add scale effect */
+.nav-bar a:hover {
+  color: #f8f8f8;
+  text-decoration: none;
+  transform: scale(var(--button-hover-scale));
+}
+
+/* Header Content - Style main header text and subtext */
+.header-content h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.header-content p {
+  margin-top: 10px;
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 1.4;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* Students Section - Style background, text alignment, and layout */
+.students-section {
+  max-width: 90%;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  color: var(--text-color);
+  text-align: center;
+  z-index: 1;
+}
+
+/* Students Table Container - Add scrollable area for the table */
+.students-table-container {
+  max-height: 50vh;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+}
+/* Customize the scrollbar width */
+.students-table-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Customize the scrollbar track */
+.students-table-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb */
+.students-table-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+/* Change thumb color on hover */
+.students-table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Students Table - Apply border collapse and rounded corners */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+/* Students Table Header - Set background color for the header */
+.students-table thead {
+  background-color: var(--secondary-color);
+}
+
+/* Students Table Cells - Add padding and styling for table cells */
+.students-table th,
+.students-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+  text-align: left;
+}
+
+/* Students Table Hover - Change background color of rows on hover */
+.students-table tbody tr:hover {
+  background-color: var(--accent-color);
+  transition: background-color 0.3s ease;
+}
+
+/* Fade In Animation - Apply fade-in animation to sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.students-section,
+.header-content {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Button Styling - Style buttons with no background, cursor pointer */
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: color var(--transition-duration), transform var(--transition-duration);
+  margin: 0 5px;
+}
+
+/* Edit Button - Style edit button with blue color */
+.edit-btn {
+  color: var(--button-color);
+}
+
+.edit-btn:hover {
+  transform: scale(var(--button-hover-scale));
+  color: var(--button-hover-color);
+}
+
+/* Delete button specific styling */
+.delete-btn {
+  color: var(--error-color);
+}
+
+.delete-btn:hover {
+  transform: scale(var(--button-hover-scale));
+  color: darkred;
+}
+
+/* Save Button - Style save button with green color */
+.save-btn {
+  color: var(--success-color);
+}
+
+/* Save Button Hover - Increase size and change color on hover */
+.save-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Cancel Button - Style cancel button with red color */
+.cancel-btn {
+  color: var(--error-color);
+}
+
+.cancel-btn:hover {
+  transform: scale(1.2);
+}
+/* Valid Input - Green borderand Background for valid inputs */
+.input-valid {
+  border: 2px solid green;
+  background-color: #e6ffed;
+}
+/* Invalid Input - Red border and Background for invalid inputs */
+.input-invalid {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+/* Adjust navigation bar for small screens */
+@media only screen and (max-width: 400px) {
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+    position: static;
+  }
+}
+
+/* Center navigation items for medium screens */
+@media only screen and (max-width: 800px) {
+  .nav-bar {
+    justify-content: center;
+    gap: 20px;
+    position: static;
+  }
+ 
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration Portal" />
+    <meta name="author" content="Varsha Boddapati" />
+    <title>Student Registration Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./index.css" />
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+      <!-- Header section with navigation bar and portal title -->
+    <header>
+       
+            <nav class="nav-bar">
+                <!-- Navigation links -->
+                <a href="index.html">Home</a>
+                <a href="student.html">View Students</a>
+            </nav>
+        <!-- Header content with title and description -->
+        <div class="header-content">
+            <h1> Student Registration Portal</h1>
+            <p>Register and manage student details with ease</p>
+
+        </div>
+       
+    </header>
+
+    <!-- Section containing the student registration form -->
+    <section class="form-container">
+        <!-- Form for student registration, data will be sent to "student.html" upon submission -->
+        <form action="student.html" id="studentForm">
+
+              <!-- Form group for student name input -->
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Student Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter student name" required />
+            </div>
+            <div class="form-group">
+                <label for="studentId"><i class="fas fa-id-card"></i> Student ID</label>
+                <input type="text" id="studentId" name="studentId" placeholder="Enter student ID" required />
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter email ID" required />
+            </div>
+            <div class="form-group">
+                <label for="contact"><i class="fas fa-phone"></i> Contact No</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter contact number" required />
+            </div>
+             <!-- Submit button to register the student -->
+            <div class="form-group">
+                <button type="submit"><i class="fas fa-paper-plane"></i> Register</button>
+            </div>
+        </form>
+    </section>
+
+
+</body>
+
+</html>

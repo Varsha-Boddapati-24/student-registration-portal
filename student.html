@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View registered student records." />
+    <meta name="author" content="Varsha Boddapati" />
+    <title>Registered Students</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./student.css" />
+    <script src="student.js" defer></script>
+</head>
+
+<body>
+   <!-- Header section with navigation bar and page title -->
+    <header>
+          <!-- Navigation links -->
+        <nav class="nav-bar">
+            <a href="index.html">Home</a>
+            <a href="student.html">View Students</a>
+        </nav>
+          <!-- Header content with title and description -->
+        <div class="header-content">
+            <h1> Student Registration Portal</h1>
+            <p>View all students who have registered.</p>
+
+        </div>
+    </header>
+<!-- Section displaying the students' details in a table -->
+    <section class="students-section ">
+        <div class="students-table-container">
+          <!-- Table for displaying student records -->
+        <table id="students-table" class="students-table">
+            <thead>
+                <tr>
+                      <!-- Table headers for each student detail -->
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Email ID</th>
+                    <th>Contact No</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table body will be populated dynamically with student records -->
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+  
+
+  
+  
+
+</body>
+
+</html>

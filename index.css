@@ -1,0 +1,211 @@
+/* Root Variables*/
+:root {
+  --primary-color: rgba(53, 47, 114, 0.75);
+  --secondary-color: #4CAF50;
+  --accent-color: #f8f8f8;
+  --text-color: white;
+  --background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+/* General Reset - Remove default margin, padding, and set box-sizing to border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Body Styling - Set background image, text color for the body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('./assets/background.jpg') no-repeat center center/cover;
+  position: relative;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+/* Fixed Overlay - Overlay behind the content  */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: var(--primary-color);
+  z-index: 0;
+}
+
+/* Header Styling - Center-align header text and style header content */
+header {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-bottom: 2px solid #ddd;
+  color: var(--text-color);
+}
+
+/* Navigation Bar - Flexbox to align menu items to the right */
+.nav-bar {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Navigation Links - Styling links with bold text, shadow, and rounded corners */
+.nav-bar a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 8px 2px rgba(242, 229, 229, 0.916);
+  border-radius: 8px;
+}
+
+/* Navigation Links Hover - Change color and add scale effect on hover */
+.nav-bar a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Header Content - Styling main title and description text in the header */
+.header-content h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.2;
+
+}
+
+.header-content p {
+  margin-top: 10px;
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 1.4;
+
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+
+
+/* Form Container - Styling the form with padding, background, and centered alignment */
+.form-container {
+  max-width: 550px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  padding: 0.25rem;
+}
+
+/* Form Label - Styling labels with  font and margin */
+form label {
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+
+}
+
+/* Form Input - Styling inputs with padding, border, and full width */
+
+form input {
+  display: block;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--accent-color);
+  font-size: 1rem;
+  height: 2.375rem;
+  width: 100%;
+}
+
+/* Form Input Focus - focus border color and shadow effect */
+form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+/* Valid Input - Green border for valid inputs */
+form input.valid {
+  border: 2px solid green;
+}
+
+/* Invalid Input - Red border for invalid inputs */
+form input.invalid {
+  border: 2px solid red;
+}
+
+/* Submit Button - Styling button with background, padding, and hover effect */
+form button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Submit Button Hover - Change background color and scale on hover */
+form button:hover {
+  background-color: #45a049;
+  transform: scale(1.03);
+}
+
+/* Fade In Animation - Animate form and header fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container,
+.header-content {
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Adjust navigation bar for smaller screens */
+@media only screen and (max-width: 400px) {
+
+
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+
+    position: static;
+  }
+
+}
+
+/*  Center navigation items for medium screens */
+@media only screen and (max-width: 800px) {
+
+
+  .nav-bar {
+    justify-content: center;
+    gap: 20px;
+
+    position: static;
+  }
+
+}
