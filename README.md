@@ -12,6 +12,10 @@ A simple student registration web app using **HTML**, **CSS**, and **JavaScript*
 - Real-time validation with input feedback.
 - Persistent data using browser's `localStorage`.
 
+### 🔗 GitHub Repository  
+https://github.com/Varsha-Boddapati-24/student-registration-portal
+ 
+
 ##  How to Run the Project
 
 ### 1. Clone the Repository
